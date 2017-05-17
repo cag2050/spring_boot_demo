@@ -36,8 +36,8 @@ new SpringApplicationBuilder()
 2. 另外一个命令就是mvn spring-boot:run，可以直接使用tomcat（默认）启动项目。  
 
 
-* Spring-Loaded项目提供了强大的热部署功能，添加/删除/修改 方法/字段/接口/枚举 等代码的时候都可以热部署，速度很快，很方便。
-想在Spring Boot中使用该功能非常简单，就是在spring-boot-maven-plugin插件下面添加依赖：
+* Spring-Loaded项目提供了强大的热部署功能，添加/删除/修改 方法/字段/接口/枚举 等代码的时候都可以热部署，速度很快，很方便。  
+想在Spring Boot中使用该功能非常简单，就是在spring-boot-maven-plugin插件下面添加依赖：  
 ```
 <dependencies>
     <dependency>
@@ -47,8 +47,8 @@ new SpringApplicationBuilder()
     </dependency>
 </dependencies>
 ```
-添加以后，通过mvn spring-boot:run启动就支持热部署了。
-注意：使用热部署的时候，需要IDE编译类后才能生效，你可以打开自动编译功能，这样在你保存修改的时候，类就自动重新加载了。  
+添加以后，通过mvn spring-boot:run启动就支持热部署了。  
+注意：使用热部署的时候，需要IDE编译类后才能生效，你可以打开自动编译功能，这样在你保存修改的时候，类就自动重新加载了。    
 
 
 参考链接：http://blog.csdn.net/isea533/article/details/50278205
