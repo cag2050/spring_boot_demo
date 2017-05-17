@@ -1,7 +1,13 @@
-* 运行Spring Boot项目的方式：
-方式1：在IDE中直接执行 main 函数，然后访问http://localhost:8080。
-方式2：用 mvn 打包为可执行jar包，然后执行java -jar xxx.jar。
-方式3：执行 mvn spring-boot:run 运行项目（直接使用tomcat（默认）启动项目）。
+开发环境：
+1. IDE：Eclipse IDE for Java EE Developers
+2. jdk 1.8  
+
+
+
+* 运行Spring Boot项目的方式：  
+方式1：在IDE中直接执行 main 函数，然后访问http://localhost:8080。  
+方式2：用 mvn 打包为可执行jar包，然后执行java -jar xxx.jar。  
+方式3：执行 mvn spring-boot:run 运行项目（直接使用tomcat（默认）启动项目）。  
 
 * 运行 main函数 方式来启动Spring Boot项目，下面3种写法中选择一种 
 写法1，最简单的写法：  
