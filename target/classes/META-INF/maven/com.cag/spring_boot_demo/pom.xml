@@ -16,6 +16,7 @@
 	</properties>
 
 	<dependencies>
+		<!-- Spring通过添加spring-boot-starter-*这样的依赖就能支持具体的某个功能。此处实现web功能，所以添加的是这个依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -27,7 +28,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	<!-- 包含了大量配置好的依赖管理，在自己项目添加这些依赖的时候不需要写<version>版本号 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -36,11 +37,13 @@
 
 	<build>
 		<plugins>
+			<!-- 该插件支持多种功能，常用的有两种，第一种功能是打包项目为可执行的jar包。另外一种功能就是支持命令 mvn spring-boot:run，运行后直接使用tomcat（默认）启动项目。 -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<dependencies>
 					<dependency>
+						<!-- 热部署 -->
 						<groupId>org.springframework</groupId>
 						<artifactId>springloaded</artifactId>
 						<version>1.2.5.RELEASE</version>
