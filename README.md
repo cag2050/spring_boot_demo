@@ -4,7 +4,7 @@
 
 * 运行Spring Boot项目的方式：  
 方式1：在IDE中直接执行 main 函数(运行：src/main/java/com/cag/spring_boot_demo/Application.java)，然后访问http://localhost:8080。  
-方式2：用 mvn 打包为可执行jar包，然后执行java -jar xxx.jar。  
+方式2：用 mvn 打包为可执行jar包，然后执行java -jar xxx.jar。具体步骤：在项目根目录下执行mvn package将会生成一个可执行的jar包，在命令行执行java -jar xxxx.jar即可启动项目。  
 方式3：执行 mvn spring-boot:run 运行项目（直接使用tomcat（默认）启动项目）。启动具体步骤：项目右击 =》Run As => Maven build... => Main标签的Goals中填写：spring-boot:run => 点击Run按钮。 停止项目步骤：命令行运行 ps -e | grep java，找到进程id，运行 kill -9 [进程id] 来停止项目。  
 
 * 执行 main函数 方式(运行：src/main/java/com/cag/spring_boot_demo/Application.java)来启动Spring Boot项目，下面3种写法中选择一种 
