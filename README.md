@@ -30,10 +30,10 @@ new SpringApplicationBuilder()
 
 
 * spring-boot-maven-plugin 插件
-1. 该插件支持多种功能，常用的有两种，第一种是打包项目为可执行的jar包。  
-在项目根目录下执行mvn package将会生成一个可执行的jar包，jar包中包含了所有依赖的jar包，只需要这一个jar包就可以运行程序，使用起来很方便。该命令执行后还会保留一个XXX.jar.original的jar包，包含了项目中单独的部分。  
-生成这个可执行的jar包后，在命令行执行java -jar xxxx.jar即可启动项目。  
-2. 另外一个命令就是mvn spring-boot:run，可以直接使用tomcat（默认）启动项目。  
+1. 该插件支持多种功能，常用的有两种，第一种是打包项目为可执行的jar包。    
+在项目根目录下执行mvn package将会生成一个可执行的jar包，jar包中包含了所有依赖的jar包，只需要这一个jar包就可以运行程序，使用起来很方便。该命令执行后还会保留一个XXX.jar.original的jar包，包含了项目中单独的部分。    
+生成这个可执行的jar包后，在命令行执行java -jar xxxx.jar即可启动项目。    
+2. 另外一个命令就是mvn spring-boot:run，可以直接使用tomcat（默认）启动项目。    
 
 
 * Spring-Loaded项目提供了强大的热部署功能，添加/删除/修改 方法/字段/接口/枚举 等代码的时候都可以热部署，速度很快，很方便。  
