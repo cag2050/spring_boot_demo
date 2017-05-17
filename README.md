@@ -1,4 +1,4 @@
-开发环境：
+* 开发环境：
 1. IDE：Eclipse IDE for Java EE Developers
 2. jdk 1.8  
 
