@@ -3,7 +3,7 @@
 2. jdk 1.8  
 
 * 运行Spring Boot项目的方式：  
-方式1：在IDE中直接执行 main 函数(运行：src/main/java/com/cag/spring_boot_demo/Application.java)，然后访问http://localhost:8080。停止项目步骤：命令行运行 ps -e | grep java，找到进程id，运行 kill -9 [进程id] 来停止项目。    
+方式1：在IDE中直接执行 main 函数(运行：src/main/java/com/cag/spring_boot_demo/Application.java)，然后访问http://localhost:8080。停止项目步骤：点击控制台的 红色停止按钮 来停止项目，或命令行 kill 进程。    
 方式2：用 mvn 打包为可执行jar包，然后执行java -jar xxx.jar。具体步骤：在项目根目录下执行mvn package将会生成一个可执行的jar包，在命令行执行java -jar xxxx.jar即可启动项目。停止项目：在命令行执行：ctrl+c。    
 方式3：执行 mvn spring-boot:run 运行项目（直接使用tomcat（默认）启动项目）。启动具体步骤：项目右击 =》Run As => Maven build... => Main标签的Goals中填写：spring-boot:run => 点击Run按钮。 停止项目步骤：命令行运行 ps -e | grep java，找到进程id，运行 kill -9 [进程id] 来停止项目。  
 
@@ -48,7 +48,10 @@ new SpringApplicationBuilder()
 </dependencies>
 ```
 添加以后，通过mvn spring-boot:run启动就支持热部署了。  
-注意：使用热部署的时候，需要IDE编译类后才能生效，你可以打开自动编译功能，这样在你保存修改的时候，类就自动重新加载了。    
+注意：使用热部署的时候，需要IDE编译类后才能生效，你可以打开自动编译功能，这样在你保存修改的时候，类就自动重新加载了。  
 
-
+* 注解
+1. “@EnableAutoConfiguration”注解的作用在于让 Spring Boot 根据应用所声明的依赖来对 Spring 框架进行自动配置，这就减少了开发人员的工作量。  
+2. 注解“@RestController”和”@RequestMapping”由 Spring MVC 提供，用来创建 REST 服务。这两个注解和 Spring Boot 本身并没有关系。  
+    
 参考链接：http://blog.csdn.net/isea533/article/details/50278205
