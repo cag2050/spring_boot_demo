@@ -52,6 +52,13 @@ new SpringApplicationBuilder()
 
 * 注解
 1. “@EnableAutoConfiguration”注解的作用在于让 Spring Boot 根据应用所声明的依赖来对 Spring 框架进行自动配置，这就减少了开发人员的工作量。  
-2. 注解“@RestController”和”@RequestMapping”由 Spring MVC 提供，用来创建 REST 服务。这两个注解和 Spring Boot 本身并没有关系。  
+2. 注解“@RestController”和”@RequestMapping”由 Spring MVC 提供，用来创建 REST 服务。这两个注解和 Spring Boot 本身并没有关系。    
+
+* @RestController  
+为了方便Rest开发，通过新的 @RestController 指定在控制器上，就不需要在每个 @RequestMapping 方法上加 @ResponseBody 了。  
+可以这样理解：  
+1. 单独使用 @Controller，页面进行跳转。  
+2. 使用 @Controller + @ResponseBody，将 return 的值写入Response对象的body数据区，用来返回 json、xml 等格式的数据。  
+3. @RestController = @Controller + @ResponseBody。  
     
 参考链接：http://blog.csdn.net/isea533/article/details/50278205
