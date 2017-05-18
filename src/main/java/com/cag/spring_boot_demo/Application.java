@@ -14,12 +14,12 @@ public class Application {
 
 	@RequestMapping("/")
 	String home() {
-		return "Hello World!";
+		return "Hello World!666";
 	}
 
 	@RequestMapping("/now")
 	String hehe() {
-		return "现在时间：" + (new Date()).toLocaleString();
+		return "现在时间888：" + (new Date()).toLocaleString();
 	}
 
 	public static void main(String[] args) {
