@@ -72,6 +72,10 @@ Spring Boot默认存放模板的路径在 src/main/resources/templates，不过�
 * 处理静态文件  
 默认情况下我们只需要在 src/main/resources/static 目录下添加 css/style.css 和 js/main.js 文件，Spring MVC能够自动将他们发布，浏览器通过访问/css/style.css, /js/main.js就可以正确加载这些资源。  
 
+* ModelMap 和 ModelAndView 的主要区别:  
+1. ModelAndView 可以设置地址转发。  
+2. ModelMap的实例是spirng mvc框架自动创建并作为控制器方法参数传入，用户无需自己创建；ModelAndView的实例是由用户手动创建的。
+
 * 地址重定向  
 ```
 	@RequestMapping("/redirectview")
