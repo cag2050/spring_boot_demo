@@ -54,9 +54,9 @@ public class Application {
 		return "modelMap";
 	}
 
-	@RequestMapping("/modelandview")
+	@RequestMapping("/forward")
 	// ModelAndView 实现地址转发
-	ModelAndView toPath() {
+	ModelAndView forward() {
 		ModelAndView view = new ModelAndView("now");
 		return view;
 	}
