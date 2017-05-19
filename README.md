@@ -4,8 +4,8 @@
 
 * 运行Spring Boot项目的方式：  
 方式1：在IDE中直接执行 main 函数(运行：src/main/java/com/cag/spring_boot_demo/Application.java)，然后访问http://localhost:8080。停止项目步骤：点击控制台的 红色停止按钮 来停止项目，或命令行 kill 进程。    
-方式2：用 mvn 打包为可执行jar包，然后执行java -jar xxx.jar。具体步骤：在项目根目录下执行mvn package将会生成一个可执行的jar包，在命令行执行java -jar xxxx.jar即可启动项目。停止项目：在命令行执行：ctrl+c。    
-方式3：执行 mvn spring-boot:run 运行项目（直接使用tomcat（默认）启动项目）。启动具体步骤：项目右击 =》Run As => Maven build... => Main标签的Goals中填写：spring-boot:run => 点击Run按钮。 停止项目步骤：命令行运行 ps -e | grep java，找到进程id，运行 kill -9 [进程id] 来停止项目。  
+方式2：用 mvn 打包为可执行jar包，然后执行java -jar xxx.jar。具体步骤：在项目根目录下执行mvn package将会生成一个可执行的jar包，在命令行执行java -jar xxxx.jar即可启动项目。停止项目：在命令行执行：ctrl+c，或命令行 kill 进程。    
+方式3：执行 mvn spring-boot:run 运行项目（**推荐，支持热部署，方便调试**）（直接使用tomcat（默认）启动项目）。启动具体步骤：项目右击 =》Run As => Maven build... => Main标签的Goals中填写：spring-boot:run => 点击Run按钮。 停止项目步骤：命令行运行 ps -e | grep java，找到进程id，运行 kill -9 [进程id] 来停止项目。  
 
 * 执行 main函数 方式(运行：src/main/java/com/cag/spring_boot_demo/Application.java)来启动Spring Boot项目，下面3种写法中选择一种 
 写法1，最简单的写法：  
@@ -59,6 +59,34 @@ new SpringApplicationBuilder()
 可以这样理解：  
 1. 单独使用 @Controller，页面进行跳转。  
 2. 使用 @Controller + @ResponseBody，将 return 的值写入Response对象的body数据区，用来返回 json、xml 等格式的数据。  
-3. @RestController = @Controller + @ResponseBody。  
+3. @RestController = @Controller + @ResponseBody。     
+
+* Spring官方已经不推荐使用JSP来开发WEB，而是推荐使用如下几种模板引擎来开发：  
+Thymeleaf(Spring官方推荐)  
+FreeMarker  
+Velocity  
+Groovy  
+Mustache    
+Spring Boot默认存放模板的路径在 src/main/resources/templates，不过我们也可以自行配置路径。  
+
+* 处理静态文件  
+默认情况下我们只需要在 src/main/resources/static 目录下添加 css/style.css 和 js/main.js 文件，Spring MVC能够自动将他们发布，浏览器通过访问/css/style.css, /js/main.js就可以正确加载这些资源。  
+
+* 地址重定向  
+```
+	@RequestMapping("/redirectview")
+	// 地址重定向实现方式1：RedirectView
+	ModelAndView redirect1() {
+		RedirectView rediView = new RedirectView("/");
+		return new ModelAndView(rediView);
+	}
+```
+```	
+	@RequestMapping("/redirectrouter")
+	// 地址重定向实现方式2：redirect: 加上 路由，推荐使用
+	String redirect2() {
+		return "redirect:statichtml";
+	}   
+```  
     
 参考链接：http://blog.csdn.net/isea533/article/details/50278205
