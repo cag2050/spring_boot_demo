@@ -38,38 +38,36 @@ public class Application {
 	}
 
 	@RequestMapping("/statichtml")
-	// @ResponseBody
 	String staticHtml() {
 		// return模板文件的名称，对应
-		// src/main/resources/templates/staticHtml.html，访问：http://localhost:8080/staticHtml
+		// src/main/resources/templates/staticHtml.html，访问：http://localhost:8080/statichtml
 		return "staticHtml";
 	}
 
 	@RequestMapping("/modelmap")
-	// @ResponseBody
 	String dynamicHtml1(ModelMap map) {
 		// 加入属性，用来在模板中读取
 		map.addAttribute("name", userName);
 		map.addAttribute("bookTitle", bookTitle);
 		// return模板文件的名称，对应
-		// src/main/resources/templates/modelMap.html，访问：http://localhost:8080/modelMap
+		// src/main/resources/templates/modelMap.html，访问：http://localhost:8080/modelmap
 		return "modelMap";
 	}
 
-//	@RequestMapping("/modelAndView")
-//	// @ResponseBody
-//	ModelAndView dynamicHtml2() {
-//		ModelAndView view = new ModelAndView("path:/");
-//		return view;
-//	}
-	
+	@RequestMapping("/modelandview")
+	// ModelAndView 实现地址转发
+	ModelAndView toPath() {
+		ModelAndView view = new ModelAndView("now");
+		return view;
+	}
+
 	@RequestMapping("/redirectview")
 	// 地址重定向实现方式1：RedirectView
 	ModelAndView redirect1() {
 		RedirectView rediView = new RedirectView("/");
 		return new ModelAndView(rediView);
 	}
-	
+
 	@RequestMapping("/redirectrouter")
 	// 地址重定向实现方式2：redirect: 加上 路由，推荐使用
 	String redirect2() {

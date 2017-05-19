@@ -88,5 +88,15 @@ Spring Boot默认存放模板的路径在 src/main/resources/templates，不过�
 		return "redirect:statichtml";
 	}   
 ```  
-    
+
+* ModelAndView 实现地址转发  
+```
+	@RequestMapping("/modelandview")
+	// ModelAndView 实现地址转发
+	ModelAndView toPath() {
+		ModelAndView view = new ModelAndView("now");
+		return view;
+	}  
+```  
+
 参考链接：http://blog.csdn.net/isea533/article/details/50278205
