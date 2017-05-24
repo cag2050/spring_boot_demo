@@ -1,11 +1,14 @@
 package com.cag.spring_boot_demo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +20,11 @@ import org.springframework.web.servlet.view.RedirectView;
 // 写了 @RestController，就不用写 @Controller 和 下面每个路由的 @ResponseBody 了。 @RestController = @Controller + @ResponseBody。
 //@RestController
 @Controller
+//@SpringBootApplication注解等价于以默认属性使用@Configuration，@EnableAutoConfiguration和@ComponentScan
+//@SpringBootApplication
+@Configuration
 @EnableAutoConfiguration
+@ComponentScan
 public class Application {
 	@Value("${userName}")
 	private String userName;
@@ -34,7 +41,8 @@ public class Application {
 	@RequestMapping("/now")
 	@ResponseBody
 	String now() {
-		return "现在时间888：" + (new Date()).toLocaleString();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return "现在时间：" + sdf.format(new Date());
 	}
 
 	@RequestMapping("/statichtml")
